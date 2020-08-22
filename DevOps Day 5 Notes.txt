@@ -1,0 +1,100 @@
+Developers
+- Code
+- Unit Tests - JUnit (using Maven Project)
+
+Operations
+- Infrastructure provisioning
+- Integration - Jenkins
+
+Testing
+- Whitebox testing, Blackbox, Integration, Stress testing, Performance test, functional and NonFunctional...
+Sanity checks, SQL Injection...
+Coding Standards
+Input verification
+ 
+- Test Suite
+--Test Cases <----> Use Cases (User Interactions)
+
+- why Testing
+- Selenium - automated testing
+-- Tools
+---- IDE - Web Browser Automated TEsting - Web Plugins
+---- Web Driver - Client Side Script
+
+Using Selenium Web Driver
+-------------------------
+1) Create Maven Project - Maven Quick Start
+2) Update pom.xml  - Add dependency of Selenium WebDriver
+3) Check Browser Type and Version and download respective exe/sh/tar file
+4) Add code in App.java file
+-- Loading related Driver
+-- Add Wait in App
+-- Access relevant elements on Web page
+-- Set or retrieve values
+
+Selenium Links
+---------------
+https://www.selenium.dev/
+https://www.selenium.dev/downloads/
+
+Maven Dependency for Selenium and TestNG
+----------------------------------------
+<dependency>
+<groupId>org.seleniumhq.selenium</groupId>
+<artifactId>selenium-java</artifactId>
+<version>3.11.0</version>
+</dependency>
+<dependency>
+<groupId>org.testng</groupId>
+<artifactId>testng</artifactId>
+<version>6.14.3</version>
+</dependency>
+
+Firefox Driver
+--------------
+https://github.com/mozilla/geckodriver/releases
+
+Edge Driver
+-----------
+https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/#downloads
+
+WebDriver Lab
+--------------
+https://s3.amazonaws.com/module-non-videos/au9vsy3y8lg.pdf
+
+AddressBook Project Git Hub Repo
+---------------------------------
+https://github.com/amrjeet/DevOpsClassCodes.git
+
+Java Code for Loading Web Driver
+----------------------------------
+System.setProperty("webdriver.chrome.driver", "D:\\edureka\\devops batch\\chromedriver_win32_old\\chromedriver.exe");
+
+    // Initiating your chromedriver
+    WebDriver driver = new ChromeDriver();
+
+    // Applied wait time
+    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    // maximize window
+    driver.manage().window().maximize();
+
+    // open browser with desried URL
+    driver.get("https://www.google.com");
+
+    // closing the browser
+    driver.close();
+ System.setProperty("webdriver.chrome.driver", "D:\\edureka\\devops batch\\chromedriver_win32_old\\chromedriver.exe");
+
+    // Initiating your chromedriver
+    WebDriver driver = new ChromeDriver();
+
+    // Applied wait time
+    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    // maximize window
+    driver.manage().window().maximize();
+
+    // open browser with desried URL
+    driver.get("https://www.google.com");
+
+    // closing the browser
+    driver.close();
