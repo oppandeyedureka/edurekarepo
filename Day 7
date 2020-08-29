@@ -1,0 +1,67 @@
+Why Container?
+- Various SWs - Versioning Issues
+- Virtualization vs Containerization
+- DevOps - Agile, Quick creation of Infra
+- Scalability/Reliability
+- Security Issues - SecOps
+- Microservices - Hosting Env.
+- Cattles vs Pets
+- Application Virtualization
+
+LXC, LXD
+Docker Ecosystem
+- Docker Images
+- Docker Container
+- Docker Runtime
+- Docker Networking
+- Docker Storage Volumes
+- Docker Swarm
+
+Complex Multitier Impln
+
+-i - Interactive mode
+-t - Block Exiting
+-d - daemon
+
+-td - Block Exiting and daemon
+-it - Interactive and Block exiting
+
+Container Life Cycle Methods
+----------------------------
+docker run -td ubuntu
+sudo docker stop 67ab3a7
+sudo docker start 67ab3a7
+sudo docker pause 67ab3a7
+sudo docker unpause 67ab3a7
+sudo docker kill 67ab3a7
+
+sudo docker inspect 67ab3a7
+
+Creating Docker Image
+---------------------
+1) Create folder - mywebapp
+1.1) mywebapp/images, /pages
+2) Create dockerfile - specify instructions
+3) docker build - tagging(identifier)
+4) docker run - local repository
+
+4) docker push - push it on docker hub/remote repo
+5) docker pull
+6) docker run
+
+sudo docker build -t omspandey/mydockerimage:1.0 .
+
+
+Git Hub nd Docker Hub
+---------------------
+Private Repo - Enterprises
+Public Repo - Developers and Testers
+
+
+
+
+
+
+
+
+
