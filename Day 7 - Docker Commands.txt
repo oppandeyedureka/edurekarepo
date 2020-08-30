@@ -1,0 +1,49 @@
+Copying data from container to root directory
+---------------------------------------------
+sudo docker run -d --name filecopy ubuntu sleep 500
+sudo docker exec -it filecopy /bin/bash
+cd /root
+echo 'In container'>file1.txt
+exit
+sudo docker cp filecopy:/root/file1.txt .
+cat file1
+
+Copy data from Host to Container
+--------------------------------
+echo 'Data in Host' > host.txt
+sudo docker cp host.txt filecopy:/root/host.txt
+sudo docker exec -it filecopy /bin/bash
+cd root
+ls
+
+Update Image from Container
+----------------------------
+sudo docker run -it ubuntu /bin/bash
+apt update
+exit
+sudo docker commit a61ac37 ubuntu:update
+sudo docker diff a61ac37
+
+Docker Import export
+---------------------
+sudo docker export a61ac37 > updatedubuntu.tar
+ls
+sudo docker import - update < updatedubuntu.tar
+sudo docker images
+sudo docker save -o update1.tar updatedubuntu
+sudo docker load update1.tar
+
+Working with Docker Hub
+------------------------
+sudo docker login
+sudo docker tag hello-world omspandey/hello-world
+sudo docker push omspandey/hello-world
+
+Local Registry
+--------------
+sudo docker pull registry:2
+sudo docker run -d -p  5000:5000 registry:2
+curl -i http://localhost:5000/v2/
+sudo docker tag ubuntu localhost:5000/ubuntu
+sudo docker push localhost:5000/ubuntu
+
