@@ -1,0 +1,79 @@
+Docker Desktop for Windows
+--------------------------
+Windows 10 premium / Windows Server 2016 or above
+Hyper-V enabled
+
+https://hub.docker.com/editions/community/docker-ce-desktop-windows/
+https://github.com/docker/toolbox/releases
+
+Docker Compose config
+---------------------
+//Older
+//sudo apt install python-pip
+//pip install docker-compose
+
+//Current
+sudo apt install docker-compose
+
+mkdir wordpressapp
+vi docker-compose.yml
+docker-compose up -d
+
+Docker Networking/Orchestration
+--------------------------------
+Services and Containers
+1..m association
+Communication between Services - Design(Docker Compose) - yaml file - Declarations
+
+Communication betn containers
+- Docker Runtime
+- Networking
+-- IP Address
+-- MAC Address
+- Load Balancer
+
+Orchestration Service Providers [Scalability/Reliability/Security]
+-------------------------------
+Docker Swarm - discussion
+Mesosphere
+DCOS
+Kubernetes - impln
+
+DevOps with Docker
+------------------
+1) Developer - Git Repo pull
+1.1) Code Changes and updates
+1.2) Unit Testing
+
+2) Developer/Operations - Packaging of Application
+2.1) Docker Image Creation
+ dockerfile creation
+ docker build
+2.2) Publish Docker Images - Docker Hub
+
+3) CI Process
+3.1) Jenkins
+-- Pull docker images from images repository [public/private]
+-- Deploy the docker container in the provisioned env
+
+4) Operations Team - Infra Provisioning
+4.1) Docker Runtime Env - testing/staging/production
+4.2) Puppet/Ansible/Chef - Infra as a code - Scalable and reliable Infra
+
+dockerfile
+------------
+FROM library/tomcat
+ADD addressbook.war /usr/local/tomcat/webapps
+CMD "catalina.sh" "run"
+
+docker build -t omspandey/addressbook:latest .
+docker push omspandey/addressbook:latest
+docker run -it -p 9090:8080 omspandey/addressbook:latest
+
+
+
+
+
+
+
+

@@ -1,18 +1,75 @@
+Installing Docker
+-----------------
+sudo apt update
+sudo apt install docker.io
+sudo docker ps
+
+Docker Desktop for Windows
+--------------------------
+https://hub.docker.com/editions/community/docker-ce-desktop-windows/
+
+Working with images
+--------------------
+sudo docker images
+sudo docker search hello
+sudo docker pull hello-world
+sudo docker pull ubuntu
+
+Working with containers
+-----------------------
+sudo docker run -i ubuntu //Interactive
+sudo docker run -t ubuntu //Terminal
+sudo docker run -d ubuntu //Daemon
+sudo docker ps -a
+sudo docker run -itd ubuntu //Daemon
+sudo docker inspect a23b4
+
+Container Life Cycle Methods
+----------------------------
+sudo docker run -td ubuntu
+sudo docker stop a23b4
+sudo docker start a23b4
+sudo docker pause a23b4
+sudo docker unpause a23b4
+sudo docker kill a23b4
+sudo docker attach a23b4
+
+Working with Docker image
+--------------------------
+vi dockerfile
+
+//Add docker commands - Contain set of instructions
+FROM <baseimage>
+Create Folder/subfolder
+COPY files from local to container env
+PORT number 
+show messages - Creation success
+
+
+sudo docker build .  //No tag or repository
+//Docker Hub repo - public repo, can create private repo
+sudo docker build -t mydockerimage omspandey/mydockerimage:1.0 .
+//Association of tag
+//Create docker hub account
+sudo docker login
+sudo docker push omspandey/mydockerimage:1.0
+sudo docker pull omspandey/mydockerimage:1.0
+
 Copying data from container to root directory
 ---------------------------------------------
-sudo docker run -d --name filecopy ubuntu sleep 500
-sudo docker exec -it filecopy /bin/bash
+sudo docker run -d --name filecopy1 ubuntu sleep 500
+sudo docker exec -it filecopy1 /bin/bash
 cd /root
-echo 'In container'>file1.txt
+echo 'In container'>file2.txt
 exit
-sudo docker cp filecopy:/root/file1.txt .
+sudo docker cp filecopy1:/root/file2.txt .
 cat file1
 
 Copy data from Host to Container
 --------------------------------
 echo 'Data in Host' > host.txt
-sudo docker cp host.txt filecopy:/root/host.txt
-sudo docker exec -it filecopy /bin/bash
+sudo docker cp hostfile.txt filecopy1:/root/hostfile.txt
+sudo docker exec -it filecopy1 /bin/bash
 cd root
 ls
 
@@ -21,8 +78,8 @@ Update Image from Container
 sudo docker run -it ubuntu /bin/bash
 apt update
 exit
-sudo docker commit a61ac37 ubuntu:update
-sudo docker diff a61ac37
+sudo docker commit a975cc ubuntu:update1
+sudo docker diff a975cc
 
 Docker Import export
 ---------------------
@@ -44,6 +101,6 @@ Local Registry
 sudo docker pull registry:2
 sudo docker run -d -p  5000:5000 registry:2
 curl -i http://localhost:5000/v2/
-sudo docker tag ubuntu localhost:5000/ubuntu
-sudo docker push localhost:5000/ubuntu
+sudo docker tag ubuntu localhost:5000/ubuntulocal
+sudo docker push localhost:5000/ubuntulocal
 
