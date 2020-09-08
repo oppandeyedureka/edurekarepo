@@ -1,0 +1,49 @@
+Puppet Installation Guide
+https://s3.amazonaws.com/module-non-videos/ef4x0i6mgr.pdf
+
+Puppet Server
+1) sudo su
+systemctl start puppetserver
+systemctl enable puppetserver
+
+3)
+https://puppet.com/try-puppet/puppet-development-kit/
+https://puppet.com/docs/pdk/1.x/pdk.html
+pdk new module edumodule1 --skip-interview
+
+Agent VM
+2) /opt/puppetlabs/bin/puppet agent --test
+
+Ansible Installation guide
+https://s3.amazonaws.com/module-non-videos/6l9z0p2394j.pdf
+
+
+Infra as  a Code
+---------------- 
+- DSC - Desired State Configuration
+
+-- Windows Os Version / Linux Distro Version-VErification
+
+-- OS Roles
+-- Runtime Env.
+-- Core Applicatin Libraries
+
+Containers
+---------
+- Docker Runtime
+
+OS - Win Image/Linux Image - 60% SWs
+20% - Roles and FEatures, Additional Downloads, Application base libraries
+20% - Applicaition Executables
+
+
+
+
+
+
+
+
+
+
+
+
