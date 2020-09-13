@@ -1,0 +1,43 @@
+DevOps on Cloud
+---------------
+
+Cloud Computing Basics
+----------------------
+https://azure.microsoft.com/en-us/overview/what-is-cloud-computing/
+https://azure.microsoft.com/en-us/overview/what-is-iaas/
+https://azure.microsoft.com/en-us/overview/what-is-paas/
+https://azure.microsoft.com/en-us/overview/what-is-saas/
+https://azure.microsoft.com/en-us/overview/choosing-a-cloud-service-provider/
+https://joshfechter.com/iaas-paas-saas/
+https://www.ispsystem.ru/sites/all/themes/ispsystem/images/news/2018/10/xaas/xaas-eng.png
+
+
+App Requirements
+----------------
+- Storage - Bottomless
+- Compute - Enormous
+- Networking - Broad Network Access [Global Users]
+
+End Users - Agile Development
+Accessible in Secured manner
+
+- Elasticity - Scale UP/DOWN [Vertical], Scale OUT/IN[Horizontal]
+- On demand Provisioning
+- Pay as per usage
+- Broad Network Access
+
+Cloud 
+- Private Cloud - Hyper-V, System Center, VMWare, vSphere ...
+- Public Cloud - AWS, Azure, GCE, SoftLayer, Alibaba, Oracle Cloud...
+- Hybrid Cloud = Priv + Public
+- Community Cloud
+
+https://azure.microsoft.com/en-us/solutions/devops/
+
+http://dev.azure.com
+
+
+ompapp
+- dockerfile
+-- webapp
+-- dalapp
